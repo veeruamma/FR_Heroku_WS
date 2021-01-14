@@ -182,7 +182,7 @@ def recognise():
 
 
 
-@app.route('/train_features',methods=['GET', 'POST'])
+@app.route('/register',methods=['GET', 'POST'])
 def features():
    # name = str(request.form['faceName'])
    # token = str(request.form['faceToken'])
@@ -195,7 +195,7 @@ def features():
     return trainResult
 
 
-@app.route("/rec_ios", methods =['POST'])
+@app.route("/recognise_ios", methods =['POST'])
 def rec_ios():
     data = request.json
     base = base64.b64decode(data['cvData'])
@@ -209,7 +209,7 @@ def rec_ios():
     return 'Hello,  '+ rec_face
 
 
-@app.route('/train_ios',methods=['GET', 'POST'])
+@app.route('/register_ios',methods=['GET', 'POST'])
 def features():
     data = request.json
     base = base64.b64decode(data['cvData'])
