@@ -204,7 +204,6 @@ def rec_ios():
     arr = np.frombuffer(base, dtype=np.uint8)
     cv_face = np.reshape(arr, (int(data['rows']), int(data['cols']), 3))
     rec_face = recognize_face(cv_face)
-
     return rec_face
 
 
