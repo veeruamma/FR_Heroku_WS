@@ -195,7 +195,7 @@ def features():
     return trainResult
 
 
-@app.route("/recognise_ios", methods =['POST'])
+@app.route('/recognise_ios', methods =['POST'])
 def rec_ios():
     data = request.json
     base = base64.b64decode(data['cvData'])
@@ -203,7 +203,6 @@ def rec_ios():
     cols = data['cols']
     arr = np.frombuffer(base, dtype=np.uint8)
     cv_face = np.reshape(arr, (int(data['rows']), int(data['cols']), 3))
-    # print('name is ====',type(arr), arr.shape, rows, cols,(int(rows)*int(cols)*3))
     rec_face = recognize_face(cv_face)
 
     return rec_face
@@ -218,7 +217,6 @@ def features_ios():
     name = data['name']
     arr = np.frombuffer(base, dtype=np.uint8)
     cv_face = np.reshape(arr, (int(data['rows']), int(data['cols']), 3))
-    # print('name is ====',name, type(arr), arr.shape, rows, cols,(int(rows)*int(cols)*3))
     trainResult = train_features(cv_face, name)
     return trainResult
 
