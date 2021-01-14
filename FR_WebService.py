@@ -176,9 +176,8 @@ def recognise():
     base = base64.b64decode(json_data['nameValuePairs']['data'])
     arr = np.frombuffer(base, dtype=np.uint8)
     cv_face = np.reshape(arr, (int(json_data['nameValuePairs']['rows']), int(json_data['nameValuePairs']['cols']), 3))
-    rec_face = recognize_face(cv_face)
-    
-    return rec_face
+    rec_res = recognize_face(cv_face)
+    return rec_res
 
 
 
