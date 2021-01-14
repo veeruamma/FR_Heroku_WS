@@ -210,7 +210,7 @@ def rec_ios():
 
 
 @app.route('/register_ios',methods=['GET', 'POST'])
-def features():
+def features_ios():
     data = request.json
     base = base64.b64decode(data['cvData'])
     rows = data['rows']
