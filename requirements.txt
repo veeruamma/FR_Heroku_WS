@@ -1,0 +1,10 @@
+flask
+boost
+cmake
+face_recognition
+numpy
+pybase64
+gunicorn
+flasgger
+pycryptodome
+

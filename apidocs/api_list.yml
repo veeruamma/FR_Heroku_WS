@@ -1,0 +1,40 @@
+
+An endpoint for testing requestBody documentation.
+---
+description: Get file list
+parameters:
+  - name: body
+    in: body
+    required: true
+    schema:
+      required:
+        - token
+        - username
+      properties:
+        token:
+          type: string
+          description: A token that validated by server
+          example: cGxlYXN1cmUu 
+        username:
+          type: string
+          description: Username
+          example: jackjeng
+
+responses:
+  200:
+    description: The posted request body
+    schema:
+      properties:
+        filelist:
+          type: array
+          example: file_list
+          items:
+            type: string
+          example:
+            - foo
+            - bar
+          description: file list as JSON array
+
+  401:
+    description: invalied token
+ 

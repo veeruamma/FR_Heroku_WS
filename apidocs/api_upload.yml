@@ -1,0 +1,38 @@
+
+An endpoint for testing requestBody documentation.
+---
+description: File upload
+parameters:
+  - name: body
+    in: body
+    required: true
+    schema:
+      required:
+        - token
+        - filename
+        - username
+      properties:
+        token:
+          type: string
+          description: A token that validated by server
+          example: cGxlYXN1cmUu
+        filename:
+          type: string
+          description: File name
+          example: foo
+        username:
+          type: string
+          description: User name
+          example: jackjeng 
+
+responses:
+  200:
+    description: upload successed
+  201:
+    description: upload failed
+  401:
+    description: invalid token
+
+
+
+ 

@@ -1,0 +1,35 @@
+
+An endpoint for testing requestBody documentation.
+---
+description: User recognition, request Token and public keys
+parameters:
+  - name: body
+    in: body
+    required: true
+    schema:
+      required:
+        - bio_features
+      properties:
+        bio_features:
+          type: string
+          description: Extracted features from user's selfie
+
+responses:
+  200:
+    description: login successed
+    schema:
+      properties:
+        token:
+          type: string
+          description: Grant privileges to access server
+          example: cGxlYXN1cmUu
+        public_key:
+          type: string
+          description: For file encryption
+          example: YW55IGNhcm5hbCBwbGVhc3VyZS4=
+
+
+  201:
+    description: Server cannot recognize user or user does not exist.
+
+ 
